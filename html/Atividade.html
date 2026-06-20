@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Matemática - Drag and Drop</title>
+  <link rel="stylesheet" href="../CSS/pico-main/css/pico.indigo.min.css">
+  <link rel="stylesheet" href="../CSS/pico-main/css/jogo.css">
+  <link rel="stylesheet" href="../CSS/site.css">
+</head>
+<body>
+  <div id="bolaViewport" class="viewport-ball" aria-hidden="true"></div>
+  <aside class="aside-back">
+    <a href="../Index.html" class="contrast rounded">⬅ Voltar ao Início</a>
+  </aside>
+  <div class="container">
+    <div class="header">
+      <h1>Desafio de Matemática</h1>
+      <p>Arraste o resultado correto para cada operação. Complete todas e ganhe uma medalha!</p>
+    </div>
+
+    <div class="controls">
+      <div class="metric">
+        <span>Tempo</span>
+        <strong id="cronometro">00:00</strong>
+      </div>
+      <div class="metric">
+        <span>Acertos</span>
+        <strong id="acertos">0</strong>
+      </div>
+      <div class="metric">
+        <span>Erros</span>
+        <strong id="erros">0</strong>
+      </div>
+    </div>
+
+    <div class="game-area">
+      <div class="message-panel">
+        <div>
+          <strong id="mensagemStatus">Combine todas as operações com os resultados corretos.</strong>
+          <div id="porcentagem">Aproveitamento: 0%</div>
+        </div>
+        <div class="medal" id="medalha" style="display:none;">🏅 Medalha</div>
+      </div>
+
+      <div class="grid-title">
+        <h2>Operações</h2>
+        <span id="infoRodada">Rodada atual</span>
+      </div>
+      <div class="grid" id="gradeOperacoes"></div>
+
+      <div class="grid-title">
+        <h2>Resultados</h2>
+        <span>Arraste cada número</span>
+      </div>
+      <div class="grid" id="gradeRespostas"></div>
+    </div>
+
+    <div class="controls-bottom">
+      <button id="botaoReiniciar" class="secondary" type="button">Reiniciar Jogo</button>
+      <button id="botaoNovaRodada" type="button">Nova Rodada</button>
+    </div>
+  </div>
+
+  <script src="../js/jogo.js"></script>
+  <script src="../js/comportamento.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contato</title>
+  <link rel="stylesheet" href="../CSS/pico-main/css/pico.indigo.min.css">
+  <link rel="stylesheet" href="../CSS/site.css">
+</head>
+<body>
+  <div id="bolaViewport" class="viewport-ball" aria-hidden="true"></div>
+  <aside class="aside-back">
+    <a href="../Index.html" class="contrast rounded">⬅ Voltar ao Início</a>
+  </aside>
+
+  <main class="container contact-card">
+    <h1>Fale comigo</h1>
+    <p class="note">Use o formulário abaixo para enviar feedback ou perguntas. Também é possível entrar em contato diretamente.</p>
+
+    <section class="contact-info espacamento-contato">
+      <div class="item">
+        <strong>Email</strong>
+        <div><a href="mailto:matheusifr.ads@gmail.com">matheusifr.ads@gmail.com</a></div>
+      </div>
+      <div class="item">
+        <strong>Telefone</strong>
+        <div>(11) 91234-5678</div>
+      </div>
+    </section>
+
+    <form id="formContato" action="/api/contato" method="POST">
+      <div class="grid">
+        <label>Nome
+          <input id="name" name="name" type="text" placeholder="Seu nome" required>
+        </label>
+        <label>Seu email
+          <input id="email" name="email" type="email" placeholder="seu@email.com" required>
+        </label>
+      </div>
+
+      <div class="grid">
+        <label>Data
+          <input id="contactDate" name="contactDate" type="date" required>
+        </label>
+        <label>Número
+          <input id="contactNumber" name="contactNumber" type="tel" inputmode="numeric" placeholder="(11) 91234-5678" maxlength="15" required>
+        </label>
+      </div>
+
+      <label>Motivo
+        <select id="reason" name="reason" required>
+          <option value="">Escolha...</option>
+          <option value="feedback">Feedback</option>
+          <option value="duvida">Dúvida</option>
+          <option value="outro">Outro</option>
+        </select>
+      </label>
+
+      <fieldset class="espacamento-contato">
+        <legend>Preferência de resposta</legend>
+        <label><input type="radio" name="replyPref" value="email"> Email</label>
+        <label><input type="radio" name="replyPref" value="telefone"> Telefone</label>
+      </fieldset>
+
+      <fieldset class="espacamento-contato">
+        <legend>Opções</legend>
+        <label><input type="checkbox" name="newsletter" value="1"> Desejo receber novidades</label>
+        <label><input type="checkbox" name="terms" value="1"> Aceito os termos</label>
+      </fieldset>
+
+      <label>Assunto
+        <input id="subject" name="subject" type="text" placeholder="Sobre o que é" minlength="4" required>
+      </label>
+
+      <label>Mensagem
+        <textarea id="message" name="message" rows="6" placeholder="Escreva aqui o que deseja dizer" maxlength="400" required></textarea>
+      </label>
+
+      <div class="contact-actions">
+        <button type="submit">Enviar Feedback/Contato</button>
+        <button id="botaoLimpar" type="button" class="secondary">Limpar</button>
+      </div>
+    </form>
+
+    <div class="contato-detalhes">
+      <details>
+        <summary>Submissões locais salvas</summary>
+        <ul id="listaSubmissoes"></ul>
+      </details>
+    </div>
+  </main>
+
+  <div id="avisoToast" class="toast">Mensagem enviada</div>
+
+  <script src="../js/Contato.js"></script>
+  <script src="../js/comportamento.js"></script>
+</body>
+</html>

@@ -1,20 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Atividade</title>
 	<link rel="stylesheet" href="CSS/pico-main/css/pico.indigo.min.css">
+    <link rel="stylesheet" href="CSS/site.css">
     <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
-<aside class="contrast rounded" style="position: fixed; top: 1rem; left: 1rem; width: 220px; max-height: calc(100vh - 2rem); padding: 1rem; overflow: auto; z-index: 20;">
-    <h2>Informações</h2>
-    <p>Este painel está fixo à esquerda usando o estilo do Pico CSS, sem empurrar o conteúdo principal.</p>
+<div id="bolaViewport" class="viewport-ball" aria-hidden="true"></div>
+<button id="botaoMenu" class="contrast secondary menu-toggle-button" type="button">Menu</button>
+<div id="sobreposicaoMenu" class="menu-overlay" tabindex="-1"></div>
+<aside id="painelMenu" class="contrast rounded menu-panel">
+    <h2>Menu</h2>
     <ul>
-        <li><a href="#">Item 1</a></li>
-        <li><a href="#">Item 2</a></li>
-        <li><a href="#">Item 3</a></li>
+        <li><a href="html/contato.html">Contato</a></li>
     </ul>
 </aside>
 <header>
@@ -24,14 +25,26 @@
         </a>
         <ul class="container-fluid">
             <li><a href="Index.html">Início</a></li>
-            <li><a href="Atividade.html">Atividade educativa</a></li>
-            <li><a href="Contato.html">Contato</a></li>
+            <li><a href="html/Atividade.html">Atividade educativa</a></li>
+            <li><a href="html/contato.html">Contato</a></li>
         </ul>
     </nav>
 </header>
 	<main class="container">
-		<h1>Algo sobre mim</h1>
-		<p>Esta é uma página simples e básica usando Pico CSS.</p>
+		<h1>Oi eu sou Matheus</h1>
+		<p>e esta é algumas coisas sobre min</p>
+		<section class="bio-centralizada">
+			<strong class="bio-destaque"></strong>
+			<div class="bio-grid">
+				<div class="bio-card"><strong>Idade</strong><span>22 anos</span></div>
+				<div class="bio-card"><strong>Livros</strong><span>Gosto de livros no geral</span></div>
+				<div class="bio-card"><strong>Música</strong><span>Curto música em grande margem</span></div>
+				<div class="bio-card"><strong>Filosofia</strong><span>Diletante de filosofia</span></div>
+				<div class="bio-card"><strong>Personalidade</strong><span>Tranquilo por natureza</span></div>
+				<div class="bio-card"><strong>Jogos</strong><span>Gosto de jogos casuais idle e incremental</span></div>
+			</div>
+		</section>
 	</main>
+    <script src="js/comportamento.js"></script>
 </body>
 </html>
